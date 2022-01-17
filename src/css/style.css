@@ -1,0 +1,301 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@300;400;800&display=swap');
+
+:root {
+    --fonte-padrao: 'Public Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: #000;
+    text-decoration: none;
+    list-style: none;
+}
+
+body {
+    font-family: var(--fonte-padrao);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* <CABECALHO> */
+
+.cabecalho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1170px;
+    padding: 25px 0;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.cabecalho .logo {
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+}
+
+.cabecalho .logo .imagem {
+    width: 100px;
+}
+
+.cabecalho .logo .titulo {
+    transition: 0.3s ease-in-out;
+    margin-left: 7px;
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.cabecalho .logo:hover .titulo {
+    color: #1ED760;
+}
+
+.cabecalho .navegacao .menu {
+    display: flex;
+}
+
+.cabecalho .navegacao .menu .item {
+    margin: 10px;
+}
+
+.cabecalho .navegacao .menu .item a {
+    padding: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.cabecalho .navegacao .menu .item a:hover {
+    background-color: #1ED760;
+    color: white;
+}
+
+/* RESPONSIVO CABECALHO */
+
+@media (max-width: 625px) {
+    .cabecalho {
+        justify-content: center;
+    }
+
+    .cabecalho .logo {
+        margin-bottom: 30px;
+    }
+}
+
+/* </CABECALHO> */
+
+/* <PAINEL> */
+
+main .paineis {
+    max-width: 100%;
+    height: 700px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+main .paineis .imagem-painel {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    min-width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: -1; /*EIXO DE PROFUNDIDADE, JOGA A IMAGEM PRA CIMA DE TODAS AS OUTRAS*/
+    filter: brightness(60%);
+
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+}
+
+/* ESTILO PARA O CARROSSEL NO JS */
+main .paineis .imagem-painel.mostrar {
+    opacity: 1;
+}
+
+main .paineis .projeto1 {
+    background-image: url('../imagens/painel1.jpg');
+}
+
+main .paineis .projeto2 {
+    background-image: url('../imagens/painel2.jpg');
+}
+
+main .paineis .projeto3 {
+    background-image: url('../imagens/painel3.jpg');
+}
+
+main .paineis .titulo {
+    font-size: calc(1em + 1vw);
+    color: #fff;
+    text-transform: uppercase;
+}
+
+main .paineis .seta {
+    background-image: url('../imagens/seta.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    /* ESCONDER O TEXTO DO HTML */
+    text-indent: 100%;
+    overflow: hidden;
+}
+
+main .paineis .seta.btn-voltar {
+    left: 20px;
+    /* ROTACIONANDO A SETA */
+    transform: rotateY(180deg);
+}
+
+main .paineis .seta.btn-avancar {
+    right: 20px;
+}
+
+/* REPONSIVO PAINEL */
+
+@media(max-width: 900px)  {
+    .container .paineis {
+        height: 500px;
+    }
+}
+
+/* </PAINEL> */
+
+/* <QUEM-SOMOS> */
+
+main .quem-somos {
+    background-color: #2941ab;
+}
+
+main .quem-somos .conteudo {
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+}
+
+main .quem-somos .conteudo .informacoes {
+    width: 40%;
+}
+
+main .quem-somos .conteudo .imagem {
+    width: 60%;
+}
+
+main .quem-somos .conteudo .informacoes .titulo {
+    color: #1ED760;
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+main .quem-somos .conteudo .informacoes .texto {
+    font-size: 20px;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #fff;
+}
+
+/* REPONSIVO QUEM-SOMOS */
+
+@media(max-width: 1200px)  {
+    .container .quem-somos .conteudo {
+        flex-direction: column;
+        text-align: center;
+        padding: 100px 30px;
+    }
+
+    .container .quem-somos .conteudo .imagem {
+        display: none;
+    }
+
+    .container .quem-somos .conteudo .informacoes {
+        width: 100%;
+    }
+}
+
+/* </QUEM-SOMOS> */
+
+/* <RODAPE> */
+
+.rodape {
+    padding: 80px 0 20px 0;
+}
+
+.rodape .navegacao {
+    max-width: 1170px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rodape .navegacao .logo {
+    display: flex;
+    align-items: center;
+}
+
+.rodape .navegacao .logo .imagem {
+    width: 100px;
+}
+
+.rodape .navegacao .logo .titulo {
+    margin-left: 7px;
+    font-size: 17px;
+    font-weight: 800;
+    text-transform: uppercase;
+    transition: 0.3s ease-in-out;
+}
+
+.rodape .navegacao .redes-sociais {
+    display: flex;
+}
+
+.rodape .navegacao .redes-sociais a {
+    display: flex;
+    justify-content: center;
+    margin: 0 10px;
+    font-size: 30px;
+    border: 2px solid #111;
+    border-radius: 50%;
+    padding: 15px;
+    width: 65px;
+    transition: 0.3s ease-in-out;
+}
+
+.rodape .navegacao .redes-sociais a:hover {
+    background-color: #1ED760;
+}
+
+.rodape .copyright {
+    margin-top: 70px;
+    text-align: center;
+}
+
+/* RESPONSIVIDADE RODAPE */
+
+@media(max-width: 940px) {
+
+    .rodape .logo:hover .titulo {
+        color: #1ED760;
+    }
+
+    .rodape .navegacao .logo {
+        margin-bottom: 30px;
+    }
+
+    .rodape .navegacao {
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+/* </RODAPE> */
