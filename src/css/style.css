@@ -255,6 +255,10 @@ main .quem-somos .conteudo .informacoes .texto {
     transition: 0.3s ease-in-out;
 }
 
+.rodape .navegacao .logo:hover .titulo {
+    color: #1ED760;
+}
+
 .rodape .navegacao .redes-sociais {
     display: flex;
 }
